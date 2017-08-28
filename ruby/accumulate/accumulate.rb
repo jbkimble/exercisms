@@ -1,22 +1,14 @@
 class Array
   def accumulate
-
+    result = []
+    self.each {|item| result << yield(item)}
+    result
   end
 
 end
 
-class TestTest
-  def my_method
-    puts "reached top"
-    yield
-    puts "reached bottom"
-  end
 
-  my_method do
-    puts "reached yield"
-  end
 
+module BookKeeping
+  VERSION = 1
 end
-
-this = TestTest.new
-this.my_method
