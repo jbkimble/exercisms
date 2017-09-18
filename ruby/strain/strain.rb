@@ -1,16 +1,13 @@
-require 'pry'
 class Array
   def keep
-    result = []
-    self.each do |element|
-      result << element if yield(element)
+    reduce([]) do |result, element|
+      yield(element) ? result << element : result
     end
-    result
   end
 
   def discard
     result = []
-    self.each do |element|
+    each do |element|
       result << element if !yield(element)
     end
     result
