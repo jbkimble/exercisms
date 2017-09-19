@@ -6,7 +6,6 @@ class BeerSong
     (last_verse..first_verse).to_a.reverse.each do |bottle_count|
       all_verses << verse(bottle_count)
     end
-    # binding.pry
     all_verses.join("\n")
   end
 
